@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La liste de nos séries{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+    {% for serie in series %}
+        <div class="col-md-4">
+        <div class="card text-center" style="width: 18rem;">
+            <img src="{{ asset('img/'~serie.poster) }}"  class="card-img-top" alt="{{ serie.nom }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ serie.nom }}</h5>
+                <p>{{ serie.categories.nom | capitalize  }}</p>
+                <a href="{{ path('main_detail', {'id' : serie.id } ) }}" class="btn btn-primary">En savoir plus</a>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

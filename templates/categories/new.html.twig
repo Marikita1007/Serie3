@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+
+    {% form_theme formCategorie 'bootstrap_5_layout.html.twig' %}
+    {{ form_start(formCategorie) }}
+    {{ form_widget(formCategorie) }}
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    {{ form_end(formCategorie) }}
+
+{% endblock %}
